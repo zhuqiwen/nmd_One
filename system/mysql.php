@@ -23,7 +23,6 @@ final class Mysql
 		$this->connect();
 	}
 
-
 	public function connect()
 	{
 		$this->conn = mysqli_connect($this->db_host, $this->db_user, $this->db_password, $this->db_database);

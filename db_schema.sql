@@ -1,5 +1,10 @@
 CREATE DATABASE IF NOT EXISTS  nmd_code_challenge;
 
+DROP TABLE IF EXISTS degrees;
+
+DROP TABLE IF EXISTS schools;
+
+
 CREATE TABLE IF NOT EXISTS schools
 (
   id INTEGER AUTO_INCREMENT PRIMARY KEY ,
@@ -9,8 +14,8 @@ CREATE TABLE IF NOT EXISTS schools
 CREATE TABLE IF NOT EXISTS degrees
 (
   id INTEGER AUTO_INCREMENT PRIMARY KEY ,
-  name VARCHAR(255),
-  school_id INTEGER,
+  name VARCHAR(255) NOT NULL,
+  school_id INTEGER NOT NULL,
   link VARCHAR(255),
   bp VARCHAR(30),
   mp VARCHAR(30),
@@ -23,4 +28,4 @@ ALTER TABLE degrees ADD CONSTRAINT
 REFERENCES schools(id) ON DELETE CASCADE;
 
 ALTER TABLE degrees ADD CONSTRAINT
-  uk_degrees UNIQUE KEY  (name, school_id, link, bp, mp, dp);
+  uk_degrees UNIQUE KEY  (name, school_id);

@@ -25,7 +25,6 @@
 			return $table_name;
 		}
 
-
 		final protected function load($lib)
 		{
 			return Application::$_lib[$lib];
